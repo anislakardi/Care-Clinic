@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=League+Spartan:wght@100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Signika+Negative:wght@300..700&display=swap');
+
+
+:root{
+
+  /*colors*/
+  --blacky : #0c0c0c;
+  --blue-clair:#4db9f9;
+  --white-b:#f6fbff;
+  --grey:#838383;
+  /*fonts*/
+  --font-family-1: 'capriola';
+  --font-family-2: 'League Spartan';
+  --font-family-3: 'Playfair Display SC';
+  --font-family-4: 'Signika Negative';
+}
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: white;
+  }
+img{
+  width: 200px;
+  height: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Réinitialisation des styles 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+.navigation {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation img {
+  width: 100px;
+}
+
+.navigation a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.navigation button {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.presentation {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.presentation h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.presentation p {
+  margin-bottom: 20px;
+}
+
+.presentation button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.services {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.services h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.services div {
+  margin-bottom: 30px;
+}
+
+.services img {
+  max-width: 100%;
+}
+
+.services h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.services p {
+  margin-bottom: 20px;
+}
+
+.médecins {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.médecins div {
+  flex: 1;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.médecins h3 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.médecins h4 {
+  font-size: 1.2em;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.médecins a {
+  margin-right: 10px;
+}
+
+.emergency {
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer img {
+  width: 100px;
+}
+
+.footer-info {
+  display: flex;
+}
+
+.footer-info h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.footer-info h4 {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.footer-info img {
+  margin-right: 5px;
+}
+*/
