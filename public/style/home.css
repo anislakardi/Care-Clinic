@@ -20,9 +20,193 @@
     box-sizing: border-box;
     background-color: white;
   }
-img{
-  width: 200px;
-  height: 200px;
+.navigation{
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  place-items: center; /* Centre verticalement et horizontalement */
+}
+.navigation a{
+  color: var(--blue-clair);
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0px 10px;
+}
+.navigation img{
+  width:150px ;
+}
+.navigation button{
+  margin: 0px 10px;
+  width: 130px;
+  height: 40px;
+  border:2px solid var(--blue-clair);
+  color: var(--blue-clair);
+  font-size: 16px;
+  padding: 5px;
+  font-family: var(--font-family-2);
+  font-weight: 600;
+}
+.navigation button:hover {
+  background-color: var(--blue-clair);
+  color: white;
+}
+.presentation{
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+.presentation #presentationPA {
+  margin-left: 100px;
+  margin-right: 100px;
+  h1{
+    font-family: var(--font-family-4);
+    color: var(--blacky);
+    font-size: 50px;
+    margin-top: 100px;
+  }
+  p{
+    font-family: var(--font-family-2);
+    color: var(--blacky);
+    margin-top: 20px;
+    margin-right: 150px;
+    font-size: 17px;
+    line-height: 20px;
+  }
+  img{
+    height: 150px;
+    width: 150px;
+    float: right;
+  }
+  button{
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 300px;
+    height: 50px;
+    border:0px;
+    background-color: var(--blue-clair);
+    color: white;
+    font-size: 16px;
+    font-family: var(--font-family-2);
+    font-weight: 600;
+    margin-bottom: 70px;
+  }
+  .h4-container {
+    display: flex;
+    margin-left: 80px;
+    margin-right: -320px;
+    h4 {
+      margin-right: 40px;
+      font-size: 17px;
+      font-family: var(--font-family-1);
+      text-align: center;
+    }
+  }
+}
+.presentation img{
+  margin-top:40px ;
+  margin-left: 10px;
+}
+.services{
+  display: grid;
+  grid-template-rows: 1fr;
+  place-items: center;
+  text-align: center;
+  background-color: var(--white-b);
+  .servicesINFO{
+    display: grid;
+    grid-template-columns:3fr 3fr 3fr;
+    gap: 20px;
+    background-color: var(--white-b);
+    padding: 70px;
+  }
+  .servicesPA{
+    margin-top: 30px;
+    background-color: var(--white-b);
+    h2{
+      font-family:var(--font-family-3);
+      font-size: 15px;
+      margin-bottom: 20px;
+    background-color: var(--white-b);
+    }
+    h3{
+      font-size: 40px;
+      background-color: var(--white-b);
+      font-family: var(--font-family-1);
+    }
+  }
+  #Les_yeux,#Des_operations,#Les_dents,#Allergies,#Inspection_periodique,#Os_et_articulations,#sang,#cheveux,#vac{
+    padding: 20px;
+    img{
+      height: 70px;
+      width: 70px;
+    }
+    h3{
+      font-family: var(--font-family-2);
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+    p{
+      font-family: var(--font-family-4);
+      font-size: 16px;
+    }
+  }
+}
+.medecinsS{
+  display: grid;
+  grid-template-rows: 1fr;
+  text-align: center;
+  background-color: var(--white-b);
+  .medecinsINFO{
+    margin-top: 30px;
+    background-color: var(--white-b);
+    h2{
+      font-family:var(--font-family-3);
+      font-size: 15px;
+      margin-bottom: 20px;
+      background-color: var(--white-b);
+    }
+    h3{
+      font-size: 40px;
+      background-color: var(--white-b);
+      font-family: var(--font-family-1);
+    }
+  }
+  .medecins{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 3fr 3fr 3fr;
+    margin-bottom: 100px;
+    background-color: var(--white-b);
+    padding: 100px;
+   
+    #doc1,#doc2,#doc3{
+      display: grid;
+      grid-row: 1fr 1fr;
+      place-items: center;
+      border-radius: 20px;
+      #picdoc1,#picdoc2,#picdoc3{
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        box-sizing: border-box;
+      }
+      img{
+      width: 20px;
+      height: 20px;
+      }
+      h3{
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: var(--font-family-4);
+        font-size: 22px;
+      }
+      h4{
+        margin-bottom: 10px;
+        font-family: var(--font-family-2);
+        font-size: 15px; 
+      }
+    }
+  }
 }
 
 
