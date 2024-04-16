@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=League+Spartan:wght@100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Signika+Negative:wght@300..700&display=swap');
+
+
+:root{
+
+  /*colors*/
+  --blacky : #0c0c0c;
+  --blue-clair:#4db9f9;
+  --white-b:#f6fbff;
+  --grey:#838383;
+  /*fonts*/
+  --font-family-1: 'capriola';
+  --font-family-2: 'League Spartan';
+  --font-family-3: 'Playfair Display SC';
+  --font-family-4: 'Signika Negative';
+}
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body{
+    background-color: #EEEEEE;
+   
+  }
+  .container{
+    display: grid;
+    grid-template-rows:1fr 0fr 5fr 1fr;
+    background-color: white;
+    border: 0px;
+    border-radius: 10px;
+    width: 600px;
+    height: 500px;
+    transform: translate(-50%,-50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0px 0px 50px var(--Dark-Slate-Grey);
+    h2{
+      font-family:var(--font-family-2);
+      font-size: 35px;
+      margin-top: 30px;
+      text-align: center;
+    }
+    .registerINFO{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      padding-left: 20px;
+      margin-top: 40px;
+    }
+    label{
+      display: block;
+      font-family: var(--font-family-2);
+      margin-bottom: 3px;
+      font-weight: 500;
+    }
+    input{
+      border: 1px solid lightgray;
+      border-radius: 10px;
+      width:260px;
+      height:33px ;
+      padding-left: 10px;
+      font-family: var(--font-family-2);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    #ddn{
+      padding-right: 10px;
+    }
+    select{
+      border: 0.5px solid lightgray;
+      border-radius: 5px;
+      width:130px;
+      height:33px;
+      padding-left: 10px;
+      font-family: var(--font-family-4);
+    }
+  }
+.reg{
+  input{
+    width: 550px;
+    margin-left: 20px;
+    background-color: black;
+    color: white;
+    font-family: var(--font-family-1);
+    margin-top: 20px;
+    border: 0px;
+  }
+}
+  
