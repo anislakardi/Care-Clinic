@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=League+Spartan:wght@100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Signika+Negative:wght@300..700&display=swap');
+
+
+  :root{
+
+  /*colors*/
+  --blacky : #0c0c0c;
+  --blue-clair:#4db9f9;
+  --white-b:#f6fbff;
+  --grey:#838383;
+  /*fonts*/
+  --font-family-1: 'capriola';
+  --font-family-2: 'League Spartan';
+  --font-family-3: 'Playfair Display SC';
+  --font-family-4: 'Signika Negative';
+  }
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body{
+    background-color: #EEEEEE;
+  }
+  .container{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    background-color: white;
+    border: 0px;
+    border-radius: 10px;
+    width: 900px;
+    height: 500px;
+    transform: translate(-50%,-50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0px 0px 50px var(--Dark-Slate-Grey);
+    img{
+      width: 100%;
+      height: 500px;
+      box-sizing: border-box;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    h2{
+      font-family:var(--font-family-2);
+      font-size: 30px;
+      margin-top: 20px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+  }
+  .loginINFO{
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 3fr;
+    place-items: center;
+    text-align: center;
+    label{
+      display: block;
+      font-family: var(--font-family-2);
+      margin-bottom: 3px;
+      font-weight: 500;
+    }
+    input{
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      width:250px;
+      height:35px ;
+      padding-left: 10px;
+      font-family: var(--font-family-2);
+      font-size: 14px;
+      margin-bottom: 13px;
+    }
+    h3{
+      font-family: var(--font-family-1);
+      font-size: 10px;
+    }
+    a{
+      color: var(--grey);
+      font-size: 10px;
+      text-decoration: none;
+      padding-left: 5px;
+    }
+    label{
+      text-align: left;
+      margin-bottom: 5px;
+    }
+    #connect{
+    border:0px;
+    background-color: #2761e7;
+    color: white;
+    font-size: 16px;
+    font-family: var(--font-family-2);
+    font-weight: 600;
+    margin-top: 30px ;
+    }
+    #mdpO{
+      display: block;
+      color: black;
+      font-size: 12px;
+      text-decoration: underline;
+      text-align: end;
+      font-weight: 600;
+    }
+  }
