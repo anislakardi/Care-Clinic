@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=League+Spartan:wght@100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Signika+Negative:wght@300..700&display=swap');
+
+
+  :root{
+
+  /*colors*/
+  --blacky : #0c0c0c;
+  --blue-clair:#4db9f9;
+  --white-b:#f6fbff;
+  --grey:#838383;
+  --vio:#b1acff;
+  /*fonts*/
+  --font-family-1: 'capriola';
+  --font-family-2: 'League Spartan';
+  --font-family-3: 'Playfair Display SC';
+  --font-family-4: 'Signika Negative';
+  }
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  img{
+    width: 60px;
+    height: 60px;
+  }
+  .container{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    width: 100%;
+    height: 100%;
+  }
+  .navbar{
+    display: grid;
+    grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    place-items: center;
+    background-color: var(--vio);
+    a{
+      color:white;
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      font-family:var(--font-family-2);
+      background-color: var(--vio);
+      border-radius: 20px;
+      width: 100px;
+      height: 40px;
+      place-items: center;
+      padding: 10px;
+    }
+    #aDashbo{
+      background-color: white;
+      color: var(--vio);
+    }
+    button{
+      width: 100px;
+      height: 40px;
+    }
+    #logout{
+      text-align: center;
+      width: 30px;
+      height: 30px;
+    }
+    
+  }
