@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/style/gestionpatients.css">
+  <title>Gestion Des Patients | Admin</title>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <img src="../public/images/navadmin.png" alt="navigation bar image">
+      <a href="../views/admindashboard.html">Tableau De Bord</a>
+      <a href="#"id="aPatients">Gestion Des Patients</a>
+      <a href="#">Gestion Des Rendez-vous</a>
+      <a href="#">Gestion Des Medcines</a>
+      <a href="#">Les Probleme Signalé</a>
+      <a href="../views/login.html" ><img id="logout" src="../public/images/logout.png" alt="logout"></a>
+    </div>
+    <div class="gestion">
+      <h1>Gestion Des Patients</h1>
+      <div class="allPatients">
+        <div class="class1">
+          <h2>Liste des patients : </h2>
+          <input type="text" placeholder="Rechercher Un Patient Par Son Nom" id="nameSearch" name="namesearch">
+          <button id="searchButton">Rechercher</button>
+          <button onclick="loginDialog()" type="button">Ajoutez Patient</button>
+          <dialog id="ajouteDia">
+            <h2>Ajoutez Un Patient</h2>
+            <form >
+              <div>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" placeholder="Nom">
+              </div>
+              <div>
+                <label for="prenom">Prenom :</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Prenom">
+              </div>
+              <div>
+                <label for="dateN">Date De Naissance :</label>
+                <input id="ddn" type="date" id="dateDN" name="datedenaissance"  placeholder="Date De Naissance">
+              </div>
+              <div>
+                <label for="sexee">Sexe :</label>
+                <select id="sexee" name="sexe">
+                  <option value="male">Masculin</option>
+                  <option value="female">Féminin</option>
+                </select>
+              </div>
+              <div>
+                <label for="ntel">Numéro de téléphone :</label>
+                <input type="tel" name="Ntel" id="ntel"  placeholder="N°Tel">
+              </div>
+              <div>
+                <label for="mail">Adresse email :</label>
+                <input type="email" id="mail" name="email" placeholder="Email">
+              </div>
+              <div>
+                <button onclick="closeLoginDialog()">Ferme</button>
+                <button onclick="ajouterDialoge()"> Ajoutez Ce Patient</button>
+              </div>
+            </form>
+          </dialog>
+        </div>
+          <table>
+            <thead>
+                <tr>
+                    <th>Numéro</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Sexe</th>
+                    <th>Date de naissance</th>
+                    <th>E-mail</th>
+                    <th>Numéro de téléphone</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Doe</td>
+                    <td>John</td>
+                    <td>Homme</td>
+                    <td>01/01/1980</td>
+                    <td>johndoe@example.com</td>
+                    <td>123456789</td>
+                    <td>
+                        <button class="btn-edit" onclick="editPatient(1)"><img src="../public/images/user-pen.svg" alt="edit photo"></button>
+                        <button class="btn-delete" onclick="deletePatient(1)"><img src="../public/images/delete-user.svg" alt="delete photo"></button>
+                    </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>anis</td>
+                  <td>Lakardi</td>
+                  <td>Homme</td>
+                  <td>01/01/1900</td>
+                  <td>jnah@example.com</td>
+                  <td>12990789</td>
+                  <td>
+                      <button class="btn-edit" onclick="editPatient(1)"><img src="../public/images/user-pen.svg" alt="edit photo"></button>
+                      <button class="btn-delete" onclick="deletePatient(1)"><img src="../public/images/delete-user.svg" alt="delete photo"></button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+
+
+<script>
+  function editPatient(patientId) {
+      // Remplacez cette alerte par votre logique de modification
+      alert("Vous avez cliqué sur Modifier pour le patient avec l'ID : " + patientId);
+  }
+
+  function deletePatient(patientId) {
+      // Remplacez cette alerte par votre logique de suppression
+      alert("Vous avez cliqué sur Supprimer pour le patient avec l'ID : " + patientId);
+  }
+
+  const dialog = document.getElementById("ajouteDia");
+  function loginDialog(){
+    dialog.showModal();
+  }
+  function closeLoginDialog(){
+    dialog.close();
+  }
+  const searchButton = document.getElementById("searchButton");
+  const nameSearchInput = document.getElementById("nameSearch");
+  const patientRows = document.querySelectorAll(".allPatients tbody tr");
+
+  searchButton.addEventListener("click", function() {
+      const searchTerm = nameSearchInput.value.toLowerCase();
+
+      patientRows.forEach(function(row) {
+          const name = row.querySelector("td:nth-child(2)").textContent.toLowerCase();
+          if (name.includes(searchTerm)) {
+              row.style.display = "table-row";
+          } else {
+              row.style.display = "none";
+          }
+      });
+  });
+  function ajouterDialoge() {
+    // Récupérer les valeurs saisies
+    const nom = document.getElementById("nom").value;
+    const prenom = document.getElementById("prenom").value;
+    const dateNaissance = document.getElementById("ddn").value;
+    const sexe = document.getElementById("sexee").value;
+    const email = document.getElementById("mail").value;
+    const tel = document.getElementById("ntel").value;
+
+    // Créer une nouvelle ligne pour le patient
+    const newRow = document.createElement("tr");
+
+    // Remplir les cellules avec les valeurs saisies
+    newRow.innerHTML = `
+        <td>${patientRows.length + 1}</td>
+        <td>${nom}</td>
+        <td>${prenom}</td>
+        <td>${sexe}</td>
+        <td>${dateNaissance}</td>
+        <td>${email}</td>
+        <td>${tel}</td>
+        <td>
+            <button class="btn-edit" onclick="editPatient(${patientRows.length + 1})"><img src="../public/images/user-pen.svg" alt="edit photo"></button>
+            <button class="btn-delete" onclick="deletePatient(${patientRows.length + 1})"><img src="../public/images/delete-user.svg" alt="delete photo"></button>
+        </td>
+    `;
+
+    // Ajouter la nouvelle ligne à la fin du tableau
+    document.querySelector(".allPatients tbody").appendChild(newRow);
+
+    // Fermer la boîte de dialogue
+    dialog.close();
+    
+    // Empêcher le formulaire de se soumettre et de recharger la page
+    return false;
+}
+
+</script>
+</html>
