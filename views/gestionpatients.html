@@ -27,18 +27,18 @@
           <button onclick="loginDialog()" type="button">Ajoutez Patient</button>
           <dialog id="ajouteDia">
             <h2>Ajoutez Un Patient</h2>
-            <form >
+            <form>
               <div>
                 <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="nom" placeholder="Nom">
+                <input type="text" id="nom" name="nom" placeholder="Nom" >
               </div>
               <div>
                 <label for="prenom">Prenom :</label>
-                <input type="text" id="prenom" name="prenom" placeholder="Prenom">
+                <input type="text" id="prenom" name="prenom" placeholder="Prenom" >
               </div>
               <div>
-                <label for="dateN">Date De Naissance :</label>
-                <input id="ddn" type="date" id="dateDN" name="datedenaissance"  placeholder="Date De Naissance">
+                <label for="ddn">Date De Naissance :</label>
+                <input id="ddn" type="date" name="datedenaissance"  placeholder="Date De Naissance" >
               </div>
               <div>
                 <label for="sexee">Sexe :</label>
@@ -49,7 +49,7 @@
               </div>
               <div>
                 <label for="ntel">Numéro de téléphone :</label>
-                <input type="tel" name="Ntel" id="ntel"  placeholder="N°Tel">
+                <input type="tel" name="Ntel" id="ntel"  placeholder="N°Tel" >
               </div>
               <div>
                 <label for="mail">Adresse email :</label>
@@ -57,7 +57,7 @@
               </div>
               <div>
                 <button onclick="closeLoginDialog()">Ferme</button>
-                <button onclick="ajouterDialoge()"> Ajoutez Ce Patient</button>
+                <button onclick="closeLoginDialog()"> Ajoutez Ce Patient</button>
               </div>
             </form>
           </dialog>
@@ -76,20 +76,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Doe</td>
-                    <td>John</td>
-                    <td>Homme</td>
-                    <td>01/01/1980</td>
-                    <td>johndoe@example.com</td>
-                    <td>123456789</td>
-                    <td>
-                        <button class="btn-edit" onclick="editPatient(1)"><img src="../public/images/user-pen.svg" alt="edit photo"></button>
-                        <button class="btn-delete" onclick="deletePatient(1)"><img src="../public/images/delete-user.svg" alt="delete photo"></button>
-                    </td>
-                </tr>
-                <tr>
+              <tr>
+                  <td>1</td>
+                  <td>Doe</td>
+                  <td>John</td>
+                  <td>Homme</td>
+                  <td>01/01/1980</td>
+                  <td>johndoe@example.com</td>
+                  <td>123456789</td>
+                  <td>
+                      <button class="btn-edit"><img src="../public/images/user-pen.svg" alt="edit photo"></button>
+                      <button class="btn-delete"><img src="../public/images/delete-user.svg" alt="delete photo"></button>
+                  </td>
+              </tr>
+              <tr>
                   <td>2</td>
                   <td>anis</td>
                   <td>Lakardi</td>
@@ -98,31 +98,18 @@
                   <td>jnah@example.com</td>
                   <td>12990789</td>
                   <td>
-                      <button class="btn-edit" onclick="editPatient(1)"><img src="../public/images/user-pen.svg" alt="edit photo"></button>
-                      <button class="btn-delete" onclick="deletePatient(1)"><img src="../public/images/delete-user.svg" alt="delete photo"></button>
+                      <button class="btn-edit" onclick="editPatient(2)"><img src="../public/images/user-pen.svg" alt="edit photo"></button>
+                      <button class="btn-delete" onclick="deletePatient(2)"><img src="../public/images/delete-user.svg" alt="delete photo"></button>
                   </td>
               </tr>
-            </tbody>
+          </tbody>          
           </table>
       </div>
     </div>
   </div>
   
 </body>
-
-
-
 <script>
-  function editPatient(patientId) {
-      // Remplacez cette alerte par votre logique de modification
-      alert("Vous avez cliqué sur Modifier pour le patient avec l'ID : " + patientId);
-  }
-
-  function deletePatient(patientId) {
-      // Remplacez cette alerte par votre logique de suppression
-      alert("Vous avez cliqué sur Supprimer pour le patient avec l'ID : " + patientId);
-  }
-
   const dialog = document.getElementById("ajouteDia");
   function loginDialog(){
     dialog.showModal();
@@ -146,42 +133,5 @@
           }
       });
   });
-  function ajouterDialoge() {
-    // Récupérer les valeurs saisies
-    const nom = document.getElementById("nom").value;
-    const prenom = document.getElementById("prenom").value;
-    const dateNaissance = document.getElementById("ddn").value;
-    const sexe = document.getElementById("sexee").value;
-    const email = document.getElementById("mail").value;
-    const tel = document.getElementById("ntel").value;
-
-    // Créer une nouvelle ligne pour le patient
-    const newRow = document.createElement("tr");
-
-    // Remplir les cellules avec les valeurs saisies
-    newRow.innerHTML = `
-        <td>${patientRows.length + 1}</td>
-        <td>${nom}</td>
-        <td>${prenom}</td>
-        <td>${sexe}</td>
-        <td>${dateNaissance}</td>
-        <td>${email}</td>
-        <td>${tel}</td>
-        <td>
-            <button class="btn-edit" onclick="editPatient(${patientRows.length + 1})"><img src="../public/images/user-pen.svg" alt="edit photo"></button>
-            <button class="btn-delete" onclick="deletePatient(${patientRows.length + 1})"><img src="../public/images/delete-user.svg" alt="delete photo"></button>
-        </td>
-    `;
-
-    // Ajouter la nouvelle ligne à la fin du tableau
-    document.querySelector(".allPatients tbody").appendChild(newRow);
-
-    // Fermer la boîte de dialogue
-    dialog.close();
-    
-    // Empêcher le formulaire de se soumettre et de recharger la page
-    return false;
-}
-
 </script>
 </html>
