@@ -65,6 +65,7 @@
         <h3>Implantation de cheveux</h3>
         <h4>Dr. Perry Cox</h4>
         <button onclick="cheveuxDialog()">Voir Les Rendez-vous</button>
+      </div>
       <div id="vac">
         <img src="../public/images/injection.png" alt="injectionpic">
         <h3>Vaccination</h3>
@@ -73,11 +74,12 @@
       </div>
     </div>
     <dialog id="Les_yeuxDia">
-      <h1>Les Rendez-vous De Service Des Yeux</h1>
+      <h1>les rendez-vous de service des yeux</h1>
       <h2>Voir Les Rendez-vous Entre Ces Deux Dates</h2>
       <input type="date" placeholder="Début" name="dateD">
       <input type="date" placeholder="Fin" name="dateF">
-      <button>Voir</button>
+      <button id="btn1">Voir</button>
+      <button onclick="closeLes_yeuxDialog()" id="btn1">Ferme</button>
       <table>
         <thead>
             <tr>
@@ -99,6 +101,7 @@
               <td>John</td>
               <td>Homme</td>
               <td>01/05/2024</td>
+              <td>08:30</td>
               <td>O+</td>
               <td>123456789</td>
               <td>
@@ -112,6 +115,7 @@
               <td>Lakardi</td>
               <td>Homme</td>
               <td>01/01/2025</td>
+              <td>08:30</td>
               <td>AB-</td>
               <td>12990789</td>
               <td>
@@ -121,9 +125,14 @@
           </tr>
         </tbody>          
       </table>
-      <button onclick="closeLes_yeuxDialog()">Ferme</button>
     </dialog>
     <dialog id="Des_operationsDia">
+      <h1>Les Rendez-vous de Service des operations</h1>
+      <h2>Voir Les Rendez-vous Entre Ces Deux Dates</h2>
+      <input type="date" placeholder="Début" name="dateD">
+      <input type="date" placeholder="Fin" name="dateF">
+      <button id="btn1">Voir</button>
+      <button onclick="closeDes_operationsDialog()" id="btn1">Ferme</button>
       <table>
         <thead>
             <tr>
@@ -145,6 +154,7 @@
               <td>John</td>
               <td>Homme</td>
               <td>01/05/2024</td>
+              <td>08:30</td>
               <td>O+</td>
               <td>123456789</td>
               <td>
@@ -158,6 +168,7 @@
               <td>Lakardi</td>
               <td>Homme</td>
               <td>01/01/2025</td>
+              <td>08:30</td>
               <td>AB-</td>
               <td>12990789</td>
               <td>
@@ -167,9 +178,14 @@
           </tr>
         </tbody>          
       </table>
-      <button onclick="closeDes_operationsDialog()">Ferme</button>
     </dialog>
     <dialog id="Les_dentsDia">
+      <h1>Les Rendez-vous de Service de Dentisterie</h1>
+      <h2>Voir Les Rendez-vous Entre Ces Deux Dates</h2>
+      <input type="date" placeholder="Début" name="dateD">
+      <input type="date" placeholder="Fin" name="dateF">
+      <button id="btn1">Voir</button>
+      <button onclick="closeLes_dentsDialog()" id="btn1">Ferme</button>
       <table>
         <thead>
             <tr>
@@ -191,6 +207,7 @@
               <td>John</td>
               <td>Homme</td>
               <td>01/05/2024</td>
+              <td>08:30</td>
               <td>O+</td>
               <td>123456789</td>
               <td>
@@ -204,6 +221,7 @@
               <td>Lakardi</td>
               <td>Homme</td>
               <td>01/01/2025</td>
+              <td>08:30</td>
               <td>AB-</td>
               <td>12990789</td>
               <td>
@@ -213,9 +231,14 @@
           </tr>
         </tbody>          
       </table>
-      <button onclick="closeLes_dentsDialog()">Ferme</button>
     </dialog>
     <dialog id="AllergiesDia">
+      <h1>Les Rendez-vous de Service des allergies</h1>
+      <h2>Voir Les Rendez-vous Entre Ces Deux Dates</h2>
+      <input type="date" placeholder="Début" name="dateD">
+      <input type="date" placeholder="Fin" name="dateF">
+      <button id="btn1">Voir</button>
+      <button onclick="closeAllergiesDialog()" id="btn1">Ferme</button>
       <table>
         <thead>
             <tr>
@@ -237,6 +260,7 @@
               <td>John</td>
               <td>Homme</td>
               <td>01/05/2024</td>
+              <td>08:30</td>
               <td>O+</td>
               <td>123456789</td>
               <td>
@@ -250,6 +274,7 @@
               <td>Lakardi</td>
               <td>Homme</td>
               <td>01/01/2025</td>
+              <td>08:30</td>
               <td>AB-</td>
               <td>12990789</td>
               <td>
@@ -259,9 +284,14 @@
           </tr>
         </tbody>          
       </table>
-      <button onclick="closeAllergiesDialog()">Ferme</button>
     </dialog>
     <dialog id="Inspection_periodiqueDia">
+      <h1>Les Rendez-vous de Service D'inspection'</h1>
+      <h2>Voir Les Rendez-vous Entre Ces Deux Dates</h2>
+      <input type="date" placeholder="Début" name="dateD">
+      <input type="date" placeholder="Fin" name="dateF">
+      <button id="btn1">Voir</button>
+      <button onclick="closeInspection_periodiqueDialog()" id="btn1">Ferme</button>
       <table>
         <thead>
             <tr>
@@ -283,6 +313,7 @@
               <td>John</td>
               <td>Homme</td>
               <td>01/05/2024</td>
+              <td>08:30</td>
               <td>O+</td>
               <td>123456789</td>
               <td>
@@ -296,6 +327,7 @@
               <td>Lakardi</td>
               <td>Homme</td>
               <td>01/01/2025</td>
+              <td>08:30</td>
               <td>AB-</td>
               <td>12990789</td>
               <td>
@@ -305,9 +337,14 @@
           </tr>
         </tbody>          
       </table>
-      <button onclick="closeInspection_periodiqueDialog()">Ferme</button>
     </dialog>
     <dialog id="Os_et_articulationsDia">
+      <h1>Les Rendez-vous de Service des Soins orthopédiques</h1>
+      <h2>Voir Les Rendez-vous Entre Ces Deux Dates</h2>
+      <input type="date" placeholder="Début" name="dateD">
+      <input type="date" placeholder="Fin" name="dateF">
+      <button id="btn1">Voir</button>
+      <button onclick="closeOs_et_articulationsDialog()" id="btn1">Ferme</button>
       <table>
         <thead>
             <tr>
@@ -329,6 +366,7 @@
               <td>John</td>
               <td>Homme</td>
               <td>01/05/2024</td>
+              <td>08:30</td>
               <td>O+</td>
               <td>123456789</td>
               <td>
@@ -342,6 +380,7 @@
               <td>Lakardi</td>
               <td>Homme</td>
               <td>01/01/2025</td>
+              <td>08:30</td>
               <td>AB-</td>
               <td>12990789</td>
               <td>
@@ -351,9 +390,14 @@
           </tr>
         </tbody>          
       </table>
-      <button onclick="closeOs_et_articulationsDialog()">Ferme</button>
     </dialog>
     <dialog id="sangDia">
+      <h1>Les Rendez-vous de Service de Filtrage Sanguin</h1>
+      <h2>Voir Les Rendez-vous Entre Ces Deux Dates</h2>
+      <input type="date" placeholder="Début" name="dateD">
+      <input type="date" placeholder="Fin" name="dateF">
+      <button id="btn1">Voir</button>
+      <button onclick="closesangDialog()" id="btn1">Ferme</button>
       <table>
         <thead>
             <tr>
@@ -375,6 +419,7 @@
               <td>John</td>
               <td>Homme</td>
               <td>01/05/2024</td>
+              <td>08:30</td>
               <td>O+</td>
               <td>123456789</td>
               <td>
@@ -388,6 +433,7 @@
               <td>Lakardi</td>
               <td>Homme</td>
               <td>01/01/2025</td>
+              <td>08:30</td>
               <td>AB-</td>
               <td>12990789</td>
               <td>
@@ -397,9 +443,14 @@
           </tr>
         </tbody>          
       </table>
-      <button onclick="closesangDialog()">Ferme</button>
     </dialog>
     <dialog id="cheveuxDia">
+      <h1>Les Rendez-vous de Service D'implantation de cheveux'</h1>
+      <h2>Voir Les Rendez-vous Entre Ces Deux Dates</h2>
+      <input type="date" placeholder="Début" name="dateD">
+      <input type="date" placeholder="Fin" name="dateF">
+      <button id="btn1">Voir</button>
+      <button onclick="closecheveuxDialog()" id="btn1">Ferme</button>
       <table>
         <thead>
             <tr>
@@ -421,6 +472,7 @@
               <td>John</td>
               <td>Homme</td>
               <td>01/05/2024</td>
+              <td>08:30</td>
               <td>O+</td>
               <td>123456789</td>
               <td>
@@ -434,6 +486,7 @@
               <td>Lakardi</td>
               <td>Homme</td>
               <td>01/01/2025</td>
+              <td>08:30</td>
               <td>AB-</td>
               <td>12990789</td>
               <td>
@@ -443,9 +496,14 @@
           </tr>
         </tbody>          
       </table>
-      <button onclick="closecheveuxDialog()">Ferme</button>
     </dialog>
     <dialog id="vacDia">
+      <h1>Les Rendez-vous de Service de Vaccination</h1>
+      <h2>Voir Les Rendez-vous Entre Ces Deux Dates</h2>
+      <input type="date" placeholder="Début" name="dateD">
+      <input type="date" placeholder="Fin" name="dateF">
+      <button id="btn1">Voir</button>
+      <button onclick="closevacDialog()" id="btn1">Ferme</button>
       <table>
         <thead>
             <tr>
@@ -467,6 +525,7 @@
               <td>John</td>
               <td>Homme</td>
               <td>01/05/2024</td>
+              <td>08:30</td>
               <td>O+</td>
               <td>123456789</td>
               <td>
@@ -480,6 +539,7 @@
               <td>Lakardi</td>
               <td>Homme</td>
               <td>01/01/2025</td>
+              <td>08:30</td>
               <td>AB-</td>
               <td>12990789</td>
               <td>
@@ -489,9 +549,7 @@
           </tr>
         </tbody>          
       </table>
-      <button onclick="closevacDialog()">Ferme</button>
     </dialog>
-  </div>
 </body>
 <Script>
   const dialog1 = document.getElementById("Les_yeuxDia");

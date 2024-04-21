@@ -37,8 +37,8 @@
     place-items: center;
     background-color: var(--vio);
     img{
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
     }
     a{
       color:white;
@@ -68,3 +68,108 @@
       height: 30px;
     }
   }
+  .gestion{
+    display: grid;
+    grid-template-columns:3fr 3fr 3fr;
+    gap: 20px;
+    background-color: var(--white-b);
+    padding: 70px;
+    div{
+      background-color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 20px;
+      img{
+        height: 50px;
+        width: 50px;
+        margin-bottom: 5px;
+      }
+    }  
+    button{
+      width: 200px;
+      height: 30px;
+      margin-top: 10px;
+      border: 0px;
+      border-radius: 20px;
+      background-color: var(--blue-clair);
+      color: white;
+      font-family: var(--font-family-4);
+    }
+    h3{
+      font-family: var(--font-family-2);
+      margin-bottom: 5px;
+    }
+    h4{
+      font-family: var(--font-family-4);
+    }
+  }
+  dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgb(246, 237, 188);
+    border-radius: 10px;
+    width: 800px;
+    height: 600px;
+    border: 0px;
+    border-radius: 20px;
+    padding: 10px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 1px 1px 1px 1px var(--grey);
+      text-align: center;
+    }
+    table th {
+      background-color: var(--blue-clair); 
+      color: white; 
+      padding: 10px;
+    }
+
+    table td {
+      background-color: white; 
+      padding: 10px;
+    }
+    table td button{
+      border: 0px;
+      background-color: transparent;
+      img{
+        width: 20px;
+        height: 20px;
+        padding-left: 5px;
+      }
+    }
+    h1{
+      margin-top: 20px;
+      font-family: var(--font-family-3);
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+    h2{
+      font-family: var(--font-family-4);
+      font-size: 15px;
+    }
+    input{
+      margin-top: 10px;
+      width: 150px;
+      text-align: center;
+      margin-right: 5px;
+      margin-bottom: 10px;
+      font-family: var(--font-family-2);
+    }
+    #btn1{
+      margin-top: 10px;
+      width: 50px;
+      border: 0px;
+      border-radius: 10px;
+      height: 20px;
+      background-color: var(--vio);
+}
+  }
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }  

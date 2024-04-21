@@ -146,10 +146,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    background-color: white;
+    background-color: rgb(214, 223, 247);
     border-radius: 10px;
     width: 800px;
     height: 600px;
+    border: 0px;
+    border-radius: 5px;
     h2{
       text-align: center;
       margin-top: 20px;
