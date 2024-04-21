@@ -78,14 +78,17 @@
     }
   }
 .reg{
-  input{
+  button{
+    cursor: pointer;
     width: 550px;
+    height:33px ;
     margin-left: 20px;
     background-color: black;
     color: white;
     font-family: var(--font-family-1);
     margin-top: 20px;
     border: 0px;
+    border-radius: 10px;
   }
 }
 .class2{
