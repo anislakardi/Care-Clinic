@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +13,23 @@
   <div class="container">
     <div class="navbar">
       <img src="../public/images/navadmin.png" alt="navigation bar image">
-      <a href="../views/admindashboard.html" id="aDashbo">Tableau De Bord</a>
-      <a href="../views/gestionpatients.html">Gestion Des Patients</a>
-      <a href="../views/gestiondesrendezvous.html">Gestion Des Rendez-vous</a>
+      <a href="../views/admindashboard.php" id="aDashbo">Tableau De Bord</a>
+      <a href="../views/gestionpatients.php">Gestion Des Patients</a>
+      <a href="../views/gestiondesrendezvous.php">Gestion Des Rendez-vous</a>
       <a href="#">Gestion Des Medcines</a>
       <a href="#">Les Probleme Signalé</a>
-      <a href="../views/login.html" ><img id="logout" src="../public/images/logout.png" alt="logout"></a>
+     <!-- <a href="../views/login.php" ><img id="logout" src="../public/images/logout.png" alt="logout">-->
+     <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
+                        <button class="logout" type="submit" name="logout">Logout</button>
+                    </form>
+<?php
+                        if(isset($_POST['logout'])){
+                            session_destroy();
+                            session_unset();
+                            header('location: login.php');
+                        }
+                    ?>
+    </a>
     </div>
     <div class="dashbo">
       <div class="satatistique">

@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../public/style/register.css">
+  <style>
+        #mdpI {
+            display:none;
+            margin:-8px;
+            /*display: none;*/
+            color: tomato;
+            font-size:11px;
+            margin-left:95px;
+        }
+    </style>
   <title>Inscription</title>
 </head>
 <body>
@@ -11,7 +21,7 @@
       <div class="registerWel">
         <h2>Inscrivez-vous</h2>
       </div>
-      <form method="post"></form>
+      <form method="post">
         <div class="registerINFO">
           <div>
             <label for="nom">*Nom :</label>
@@ -62,6 +72,7 @@
           <div>
             <label for="cpsw">*Confirmer :</label>
             <input type="password" id="cpsw" name="cpassword" required placeholder="Confirmation de Mot de passe">
+            <p id="mdpI">Le mot de passe saisi est incorrect</p>
           </div>
           <div>
             <label for="type">*Type :</label>
@@ -77,8 +88,7 @@
           
         </div>
         <div class="reg">
-          <a href="login.html"><button type="submit">S'inscrire</button></a>
-            <!--<input type="submit" value="S'inscrire">-->
+          <button type="submit" name="register" onclick="PIN()">S'inscrire</button>
         </div>
       </form>     
   </div>
@@ -96,3 +106,46 @@
 }
 </script>
 </html>
+
+<?php
+if(isset($_POST['register'])) {
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $datedenaissance = $_POST['datedenaissance'];
+    $sexe = $_POST['sexe'];
+    $sang = $_POST['sang'];
+    $Ntel = $_POST['Ntel'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+    $type = $_POST['type'];
+    $servername = "localhost";
+    $username = "root";
+    $passwordd = "";
+    $database = "clinique";
+    $conn = new mysqli($servername,$username, $passwordd, $database);
+    $sql = "SELECT * FROM admine WHERE email = '$email'";
+    $result = $conn->query($sql);                                                   
+    if($password!=$cpassword){
+    echo "
+    <style>
+    #mdpI {
+    display:block;}
+    </style>";
+    }
+    else{
+    if($type == "admin"){
+    $sql = "INSERT INTO admine (nom, prenom, birth, sexe, sang, n_tel, email, psw) 
+    VALUES ('$nom','$prenom','$datedenaissance','$sexe','$sang','$Ntel','$email','$password');";
+    $conn->query($sql);
+    header("Location: login.php");
+    exit();}
+    else{
+    $sql = "INSERT INTO patient (nom, prenom, birth, sexe, sang, n_tel, email, psw) 
+    VALUES ('$nom','$prenom','$datedenaissance','$sexe','$sang','$Ntel','$email','$password');";
+    $conn->query($sql);
+    header("Location: login.php");
+    exit();
+    }}
+    }
+?>
