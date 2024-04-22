@@ -7,6 +7,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../public/style/admindashboard.css">
+  <style>
+    .logoutt{
+      width: 100px;
+      height: 40px;
+      border-radius:30px;
+      border: 0px;
+      background-color: transparent;
+    }
+  </style>
   <title>Tableau De Bord | Admin</title>
 </head>
 <body>
@@ -20,10 +29,10 @@
       <a href="#">Les Probleme Signalé</a>
      <!-- <a href="../views/login.php" ><img id="logout" src="../public/images/logout.png" alt="logout">-->
      <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
-                        <button class="logout" type="submit" name="logout">Logout</button>
+                        <button class="logoutt" type="submit" name="logoutt"><img id="logout" src="../public/images/logout.png" alt="logout"></button>
                     </form>
 <?php
-                        if(isset($_POST['logout'])){
+                        if(isset($_POST['logoutt'])){
                             session_destroy();
                             session_unset();
                             header('location: login.php');
