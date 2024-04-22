@@ -1,59 +1,3 @@
-<?php
-session_start(); // Démarrage de la session
-
-// Si l'utilisateur est déjà connecté, redirigez-le directement vers son tableau de bord
-if(isset($_SESSION['user_id'])) {
-    header("Location: admindashboard.php");
-    exit();
-}
-
-// Connexion à la base de données
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "clinique";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Vérification de l'établissement de la connexion
-if ($conn->connect_error) {
-    die("La connexion a échoué : " . $conn->connect_error);
-}
-
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Vérifiez les données soumises
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-
-  // Vérifiez l'authenticité des données de connexion pour le tableau admine
-  $sql = "SELECT * FROM admine WHERE email = '$email' AND psw = '$password'";
-  $result = $conn->query($sql);
-
-  if ($result->num_rows > 0) {
-      // Connexion de l'administrateur
-      $_SESSION['user_id'] = $email; // Vous pouvez stocker n'importe quel identifiant unique ici
-      header("Location: admindashboard.php");
-      exit();
-  } else {
-      // Si l'authentification échoue pour l'administrateur, vérifiez la table patient
-      $sql = "SELECT * FROM patient WHERE email = '$email' AND psw = '$password'";
-      $result = $conn->query($sql);
-
-      if ($result->num_rows > 0) {
-          // Connexion du patient
-          $_SESSION['user_id'] = $email; // Vous pouvez stocker n'importe quel identifiant unique ici
-          header("Location: patient.php");
-          exit();
-      } else {
-          // Si l'authentification échoue pour le patient, affichez un message d'erreur à l'utilisateur
-          $error_message = "Les informations d'identification sont incorrectes. Veuillez réessayer.";
-      }
-  }
-}
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -148,7 +92,7 @@ body{
   label{
     text-align: left;
     margin-bottom: 5px;
-    margin-left:100px
+    margin-left:100px;
   }
   #connect{
   cursor: pointer;
@@ -172,6 +116,15 @@ body{
     font-weight: 600;
   }
 }
+  #mdpI {
+    display: none;
+    margin:-8px;
+    color: tomato;
+    font-size:11px;
+    text-align:center;
+    /* margin-left:95px; */
+    font-weight: 700;
+  }
 
   </style>
   <title>Connexion</title>
@@ -187,18 +140,14 @@ body{
       </div>
       <div>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-          <label for="mail">Adresse email :</label>
+          <label for="mail" id="label-mail">Adresse email :</label>
           <input type="email" id="mail" name="email" required placeholder="Email">
-          <label for="psw">Mot de passe :</label>
+          <label for="psw" id="label-psw">Mot de passe :</label>
           <input type="password" id="psw" name="password" required placeholder="Mot de Passe">
+          <p id="mdpI">Le mot de passe ou l'email saisi est incorrect</p>
           <button id="connect" type="submit">Se connecter</button>
         </form>
       </div>
-      <?php if(isset($error_message)) { ?>
-      <div class="error">
-        <?php echo $error_message; ?>
-      </div>
-      <?php } ?>
       <div>
         <h3>Vous n'avez pas de compte? <a href="register.php">Inscrivez-vous</a></h3>
       </div>
@@ -206,3 +155,65 @@ body{
   </div>
 </body>
 </html>
+<?php
+session_start(); // Démarrage de la session
+
+// Si l'utilisateur est déjà connecté, redirigez-le directement vers son tableau de bord
+if(isset($_SESSION['user_id'])) {
+    header("Location: admindashboard.php");
+    exit();
+}
+
+// Connexion à la base de données
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "clinique";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Vérification de l'établissement de la connexion
+if ($conn->connect_error) {
+    die("La connexion a échoué : " . $conn->connect_error);
+}
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Vérifiez les données soumises
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  // Vérifiez l'authenticité des données de connexion pour le tableau admine
+  $sql = "SELECT * FROM admine WHERE email = '$email' AND psw = '$password'";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+      // Connexion de l'administrateur
+      $_SESSION['user_id'] = $email; // Vous pouvez stocker n'importe quel identifiant unique ici
+      header("Location: admindashboard.php");
+      exit();
+  } else {
+      // Si l'authentification échoue pour l'administrateur, vérifiez la table patient
+      $sql = "SELECT * FROM patient WHERE email = '$email' AND psw = '$password'";
+      $result = $conn->query($sql);
+
+      if ($result->num_rows > 0) {
+          // Connexion du patient
+          $_SESSION['user_id'] = $email; // Vous pouvez stocker n'importe quel identifiant unique ici
+          header("Location: patient.php");
+          exit();
+      }else{
+          // Si l'authentification échoue pour le patient, affichez un message d'erreur à l'utilisateur
+          echo "
+            <style>
+            #mdpI {
+            display:block;}
+            #label-mail,#label-psw {
+              margin-left:0px;}
+            </style>";
+            
+      }
+  }
+}
+
+?>
+
