@@ -1,6 +1,17 @@
 <?php 
     session_start();
 ?>
+<?php   
+   $servername = "localhost";
+   $username = "root";
+   $passwordd = "";
+   $database = "clinique";
+   $conn = new mysqli($servername,$username, $passwordd, $database);
+   $sql = "SELECT * FROM patient";
+   $result_patient = $conn->query($sql);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +26,31 @@
       border: 0px;
       background-color: transparent;
     }
+    .class1{
+    display: grid;
+    grid-template-rows: 2fr 2fr;
+    gap: 10px;
+    width: 95%;
+    margin-left: 22px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 1px 1px 1px 1px var(--grey);
+      text-align: center;
+    }
+    table th {
+      background-color: var(--blue-clair); 
+      color: white; 
+      padding: 10px;
+    }
+
+    table td {
+      background-color: white; 
+      padding: 10px;
+    }
+  }
   </style>
   <title>Tableau De Bord | Admin</title>
 </head>
@@ -29,15 +65,15 @@
       <a href="#">Les Probleme Signalé</a>
      <!-- <a href="../views/login.php" ><img id="logout" src="../public/images/logout.png" alt="logout">-->
      <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
-                        <button class="logoutt" type="submit" name="logoutt"><img id="logout" src="../public/images/logout.png" alt="logout"></button>
-                    </form>
+        <button class="logoutt" type="submit" name="logoutt"><img id="logout" src="../public/images/logout.png" alt="logout"></button>
+     </form>
 <?php
-                        if(isset($_POST['logoutt'])){
-                            session_destroy();
-                            session_unset();
-                            header('location: login.php');
-                        }
-                    ?>
+  if(isset($_POST['logoutt'])){
+      session_destroy();
+      session_unset();
+      header('location: login.php');
+  }
+?>
     </a>
     </div>
     <div class="dashbo">
@@ -70,13 +106,19 @@
                   <th>Sexe</th>
                   <th>Groupe sanguin</th>
                 </tr>
-                <tr>
-                  <td>10</td>
-                  <td>Doe</td>
-                  <td>John</td>
-                  <td>M</td>
-                  <td>A+</td>
-                </tr>
+                <?php
+    if ($result_patient->num_rows > 0) {
+        while($row = $result_patient->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row["id_patient"] . "</td>";
+            echo "<td>" . $row["nom"] . "</td>";
+            echo "<td>" . $row["prenom"] . "</td>";
+            echo "<td>" . $row["sexe"] . "</td>";
+            echo "<td>" . $row["sang"] . "</td>";
+            echo "</tr>";
+        }
+      }
+               ?>
             </table>
           </div>
           <div class="urgent">

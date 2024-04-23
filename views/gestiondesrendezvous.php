@@ -10,9 +10,9 @@
   <div class="container">
     <div class="navbar">
       <img src="../public/images/navadmin.png" alt="navigation bar image">
-      <a href="../views/admindashboard.html">Tableau De Bord</a>
-      <a href="../views/gestionpatients.html"id="aPatients">Gestion Des Patients</a>
-      <a href="../views/gestiondesrendezvous.html" id="aRV">Gestion Des Rendez-vous</a>
+      <a href="../views/admindashboard.php">Tableau De Bord</a>
+      <a href="../views/gestionpatients.php"id="aPatients">Gestion Des Patients</a>
+      <a href="../views/gestiondesrendezvous.php" id="aRV">Gestion Des Rendez-vous</a>
       <a href="#">Gestion Des Medcines</a>
       <a href="#">Les Probleme Signalé</a>
       <a href="../views/login.html" ><img id="logout" src="../public/images/logout.png" alt="logout"></a>

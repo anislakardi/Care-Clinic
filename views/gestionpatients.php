@@ -1,29 +1,57 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$passwordd = "";
+$database = "clinique";
+$conn = new mysqli($servername,$username, $passwordd, $database);
+$sql = "SELECT * FROM patient";
+$result_patient = $conn->query($sql);  
+
+// إذا تم إرسال قيمة بحث
+if(isset($_GET['namesearch'])) {
+    $searchTerm = $_GET['namesearch'];
+    // إعداد الاستعلام للبحث باستخدام القيمة المرسلة
+    $sql = "SELECT * FROM patient WHERE nom LIKE '%$searchTerm%'";
+    // تنفيذ الاستعلام
+    $result_patient = $conn->query($sql);  
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../public/style/gestionpatients.css">
+  <style>
+    #recharche{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:20px
+    }
+  </style>
   <title>Gestion Des Patients | Admin</title>
 </head>
 <body>
   <div class="container">
     <div class="navbar">
       <img src="../public/images/navadmin.png" alt="navigation bar image">
-      <a href="../views/admindashboard.html">Tableau De Bord</a>
-      <a href="../views/gestionpatients.html"id="aPatients">Gestion Des Patients</a>
-      <a href="../views/gestiondesrendezvous.html">Gestion Des Rendez-vous</a>
+      <a href="../views/admindashboard.php">Tableau De Bord</a>
+      <a href="../views/gestionpatients.php"id="aPatients">Gestion Des Patients</a>
+      <a href="../views/gestiondesrendezvous.php">Gestion Des Rendez-vous</a>
       <a href="#">Gestion Des Medcines</a>
       <a href="#">Les Probleme Signalé</a>
-      <a href="../views/login.html" ><img id="logout" src="../public/images/logout.png" alt="logout"></a>
+      <a href="../views/login.php" ><img id="logout" src="../public/images/logout.png" alt="logout"></a>
     </div>
     <div class="gestion">
       <h1>Gestion Des Patients</h1>
       <div class="allPatients">
         <div class="class1">
           <h2>Liste des patients : </h2>
-          <input type="text" placeholder="Rechercher Un Patient Par Son Nom" id="nameSearch" name="namesearch">
-          <button id="searchButton">Rechercher</button>
+          <form method="get" id="recharche">
+            <input type="text" placeholder="Rechercher Un Patient Par Son Nom" id="nameSearch" name="namesearch">
+            <button type="submit">Rechercher</button>
+          </form>
           <button onclick="loginDialog()" type="button">Ajoutez Patient</button>
           <dialog id="ajouteDia">
             <h2>Ajoutez Un Patient</h2>
@@ -77,31 +105,26 @@
             </thead>
             <tbody>
               <tr>
-                  <td>1</td>
-                  <td>Doe</td>
-                  <td>John</td>
-                  <td>Homme</td>
-                  <td>01/01/1980</td>
-                  <td>johndoe@example.com</td>
-                  <td>123456789</td>
-                  <td>
-                      <button class="btn-edit"><img src="../public/images/user-pen.svg" alt="edit photo"></button>
-                      <button class="btn-delete"><img src="../public/images/delete-user.svg" alt="delete photo"></button>
+              <?php
+    if ($result_patient->num_rows > 0) {
+        while($row = $result_patient->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row["id_patient"] . "</td>";
+            echo "<td>" . $row["nom"] . "</td>";
+            echo "<td>" . $row["prenom"] . "</td>";
+echo "<td>" . $row["sexe"] . "</td>";
+            echo "<td>" . $row["birth"] . "</td>";
+            echo "<td>" . $row["email"] . "</td>";
+            echo "<td>" . $row["n_tel"] . "</td>";
+            echo '<td>  <button class="btn-edit"><img src="../public/images/user-pen.svg" alt="edit photo"></button>
+            <button class="btn-delete"><img src="../public/images/delete-user.svg" alt="delete photo"></button> </td>';
+            echo "</tr>";
+        }
+      }
+                    ?>
                   </td>
               </tr>
-              <tr>
-                  <td>2</td>
-                  <td>anis</td>
-                  <td>Lakardi</td>
-                  <td>Homme</td>
-                  <td>01/01/1900</td>
-                  <td>jnah@example.com</td>
-                  <td>12990789</td>
-                  <td>
-                      <button class="btn-edit" onclick="editPatient(2)"><img src="../public/images/user-pen.svg" alt="edit photo"></button>
-                      <button class="btn-delete" onclick="deletePatient(2)"><img src="../public/images/delete-user.svg" alt="delete photo"></button>
-                  </td>
-              </tr>
+              
           </tbody>          
           </table>
       </div>
@@ -117,21 +140,5 @@
   function closeLoginDialog(){
     dialog.close();
   }
-  const searchButton = document.getElementById("searchButton");
-  const nameSearchInput = document.getElementById("nameSearch");
-  const patientRows = document.querySelectorAll(".allPatients tbody tr");
-
-  searchButton.addEventListener("click", function() {
-      const searchTerm = nameSearchInput.value.toLowerCase();
-
-      patientRows.forEach(function(row) {
-          const name = row.querySelector("td:nth-child(2)").textContent.toLowerCase();
-          if (name.includes(searchTerm)) {
-              row.style.display = "table-row";
-          } else {
-              row.style.display = "none";
-          }
-      });
-  });
 </script>
 </html>
