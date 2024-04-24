@@ -199,7 +199,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       if ($result->num_rows > 0) {
           // Connexion du patient
           $_SESSION['user_id'] = $email; // Vous pouvez stocker n'importe quel identifiant unique ici
-          header("Location: patient.php");
+          header("Location: rendezvouspatient.php");
           exit();
       }else{
           // Si l'authentification échoue pour le patient, affichez un message d'erreur à l'utilisateur
