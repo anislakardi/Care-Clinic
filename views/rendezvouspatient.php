@@ -13,7 +13,7 @@
       <a href="../views/rendezvouspatient.html" id="Rrv">Recharge Un Rendez-Vous</a>
       <a href="../views/Lesrendezvouspatient.html">Mes Rendez Vous</a>
       <a href="#">Signalé Un Probleme</a>
-      <a href="../views/login.html" ><img id="logout" src="../public/images/logout.png" alt="logout"></a>
+      <a href="../views/login.php" ><img id="logout" src="../public/images/logout.png" alt="logout"></a>
     </div>
     <div class="content">
       
