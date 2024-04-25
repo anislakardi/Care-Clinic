@@ -10,10 +10,10 @@
   <div class="container">
     <div class="navbar">
       <img src="../public/images/navadmin.png" alt="navigation bar image">
-      <a href="../views/rendezvouspatient.html">Recharge Un Rendez-Vous</a>
-      <a href="../views/mes_rv.html" id="Rrv">Mes Rendez Vous</a>
+      <a href="../views/rendezvouspatient.php">Recharge Un Rendez-Vous</a>
+      <a href="../views/mes_rv.php" id="Rrv">Mes Rendez Vous</a>
       <a href="#">Signalé Un Probleme</a>
-      <a href="../views/login.html" ><img id="logout" src="../public/images/logout.png" alt="logout"></a>
+      <a href="../views/login.php" ><img id="logout" src="../public/images/logout.png" alt="logout"></a>
     </div>
   
     <div class="content">
