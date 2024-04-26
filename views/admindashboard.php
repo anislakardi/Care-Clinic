@@ -51,6 +51,16 @@
       padding: 10px;
     }
   }
+  .dashbo{
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    gap: 10px;
+  }
+  h1{
+    text-align: center;
+    font-size: 40px;
+    margin-top:20px;
+  }
   </style>
   <title>Tableau De Bord | Admin</title>
 </head>
@@ -77,22 +87,8 @@
     </a>
     </div>
     <div class="dashbo">
-      <div class="satatistique">
-        <div class="Statiqpatients">
-          <h1>Chaque patient a consulté notre clinique :</h1>
-          <h2>12900</h2>
-          <h3>Patients</h3>
-        </div>
-        <div class="succes">
-          <h1>Succès de nos rendez-vous :</h1>
-          <h2>100</h2>
-          <h3>%</h3>
-        </div>
-        <div class="Sopinions">
-          <h1>Taux de réussite :</h1>
-          <h2>4.6/5</h2>
-          <h3>Stars</h3>
-        </div>
+      <div class="classX">
+        <h1> Statistique de la page </h1>
       </div>
       <div class="dashcontent">
         <div class="class1">
@@ -154,10 +150,66 @@
                 <th>Disponibilité</th>
               </tr>
               <tr>
-                <td>Doe</td>
-                <td>John</td>
+                <td>Gregory</td>
+                <td>House</td>
                 <td>M</td>
-                <td>Cardiologie</td>
+                <td>Ophtalmologie avancée</td>
+                <td>Oui</td>
+              </tr>
+              <tr>
+                <td>Meredith</td>
+                <td>Grey</td>
+                <td>F</td>
+                <td>Chirurgies spécialisées</td>
+                <td>Non</td>
+              </tr>
+              <tr>
+                <td>John</td>
+                <td>Watson</td>
+                <td>M</td>
+                <td>Dentisterie</td>
+                <td>Oui</td>
+              </tr>
+              <tr>
+                <td>Leonard</td>
+                <td>McCoy</td>
+                <td>M</td>
+                <td>Allergies</td>
+                <td>Oui</td>
+              </tr>
+              <tr>
+                <td>Dana</td>
+                <td>Scully</td>
+                <td>F</td>
+                <td>Examens préventifs</td>
+                <td>Oui</td>
+              </tr>
+              <tr>
+                <td>Mindy</td>
+                <td>Lahiri</td>
+                <td>F</td>
+                <td>Soins orthopédique</td>
+                <td>Non</td>
+              </tr>
+              <tr>
+                <td>Shaun</td>
+                <td>Murphy</td>
+                <td>M</td>
+                <td>Hémodialyse</td>
+                <td>Non</td>
+              </tr>
+              <tr>
+                <td>Perry</td>
+                <td>Cox</td>
+                <td>M</td>
+                <td>Implantation capillaire</td>
+                <td>Non</td>
+              </tr>
+              <tr>
+                <td>Claire</td>
+                <td>Temple</td>
+                <td>F</td>
+                <td>Vaccination</td>
                 <td>Oui</td>
               </tr>
           </table>

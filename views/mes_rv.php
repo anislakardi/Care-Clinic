@@ -13,7 +13,7 @@
       <a href="../views/rendezvouspatient.php">Recharge Un Rendez-Vous</a>
       <a href="../views/mes_rv.php" id="Rrv">Mes Rendez Vous</a>
       <a href="#">Signalé Un Probleme</a>
-      <a href="../views/login.php" ><img id="logout" src="../public/images/logout.png" alt="logout"></a>
+      <a href="../views/index.html" ><img id="logout" src="../public/images/logout.png" alt="logout"></a>
     </div>
   
     <div class="content">
@@ -29,7 +29,6 @@
                 <th>Heure de Rendez-vous</th>
                 <th>Sanguin</th>
                 <th>Numéro de téléphone</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -42,11 +41,6 @@
               <td>08:30</td>
               <td>O+</td>
               <td>123456789</td>
-              <td>
-                  <button class="btn-edit"><img src="../public/images/user-pen.svg" alt="edit photo"></button>
-                  <button class="btn-delete"><img src="../public/images/delete-user.svg" alt="delete photo"></button>
-                  <button class="btn-accepte"><img src="../public/images/checkbox.svg" alt="accept pic"></button>
-                </td>
           </tr>
           <tr>
               <td>2</td>
@@ -57,11 +51,6 @@
               <td>08:30</td>
               <td>AB-</td>
               <td>12990789</td>
-              <td>
-                  <button class="btn-edit" onclick="editPatient(2)"><img src="../public/images/user-pen.svg" alt="edit photo"></button>
-                  <button class="btn-delete" onclick="deletePatient(2)"><img src="../public/images/delete-user.svg" alt="delete photo"></button>
-                  <button class="btn-accepte"><img src="../public/images/checkbox.svg" alt="accept pic"></button>
-                </td>
           </tr>
         </tbody>          
       </table>

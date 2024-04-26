@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Capriola&family=League+Spartan:wght@100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Signika+Negative:wght@300..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
   :root{
 
@@ -14,6 +14,7 @@
   --font-family-2: 'League Spartan';
   --font-family-3: 'Playfair Display SC';
   --font-family-4: 'Signika Negative';
+  --fnt:"Montserrat", sans-serif;
   }
   *{
     margin: 0px;
@@ -36,7 +37,7 @@
     display: grid;
     grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 2fr;
     place-items: center;
-    background-color: blueviolet;
+    background-color: #7A57D1;
     img{
       width: 60px;
       height: 60px;
@@ -48,7 +49,7 @@
       text-decoration: none;
       text-align: center;
       font-family:var(--font-family-2);
-      background-color: blueviolet;
+      background-color: #7A57D1;
       border-radius: 20px;
       width: 100px;
       height: 40px;
@@ -56,7 +57,7 @@
       padding: 10px;
     }
     #Rrv{
-      background-color: pink;
+      background-color: #4FC1E9;
       color: white;
     }
     button{
@@ -74,19 +75,19 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 20px;
-    background-color: rgb(232, 194, 225);
+    background-color: #F5F7FA;
   }
   .prendre{
     display: grid;
     grid-template-rows: 1fr 4fr;
     place-items: center;
     h1{
-      font-family: var(--font-family-1);
+      font-family: var(--fnt);
       text-align: center;
     }
     form{
       border: 0px;
-      background-color: hwb(271 17% 11%);
+      background-color: #7A57D1;
       width: 300px;
       text-align: center;
       height: 400px;
@@ -104,25 +105,26 @@
         width: 250px;
         height: 25px;
         border-radius: 10px;
-        border:0px;font-family: var(--font-family-4);
-      }
-      option{
         text-align: center;
+        padding-left: 20px;
+        border:0px;font-family: var(--font-family-2);
       }
       input{
         width: 200px;
-        margin-top: 100px;
+        margin-top: 50px;
         height: 30px;
         border: 0px;
-        border-radius: 20px;
-        background-color: white;
-        font-family: var(--font-family-4);
-        font-weight: 800;
+        border-radius: 17px;
+        background-color: #4FC1E9;
+        font-family: var(--font-family-2);
+        font-weight: 600;
+        color: white;
+        letter-spacing: 1px;
       }
       h3{
-        display: block;
-        color: tomato;
-        font-style: italic;
+        display: none;
+        color: #A0153E;
+        font-style:italic;
         font-family: var(--font-family-2);
         padding-left: 10px;
         padding-right: 10px;
@@ -133,31 +135,42 @@
     border: 0px;
     margin-right: 10px;
     h1{
-      margin-top: 10px;
+      margin-top: 30px;
       font-size: 30px;
       text-align: center;
       margin-bottom: 10px;
+      font-family: var(--fnt);
     }
     h2{
         font-size: 17px;
         text-align: center;
         font-family: var(--font-family-2);
         margin-bottom: 5px;
-        color: white;
-        letter-spacing: 1.5px;
+        color: #FFF7FC;
+        letter-spacing: 1.2px;
     }
     h3{
       text-align: center;
       font-size: 12px;
       margin-bottom: 7px;
       font-family: var(--font-family-2);
-      color: pink;
+      color: #070F2B;
     }
     div{
-      background-color: blueviolet;
+      background-color: #7A57D1;
       border-radius: 15px;
       height: 50px;
-      margin-bottom: 8px;
+      margin-bottom: 9px;
       padding: 5px;
     }
+  }
+  #datte{
+    margin-top: -100px;
+    text-align: center;
+    padding-right: 5px;
+    width: 250px;
+    height: 25px;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
   }

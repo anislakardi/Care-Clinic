@@ -11,12 +11,11 @@
     <div class="navbar">
       <img src="../public/images/navadmin.png" alt="navigation bar image">
       <a href="../views/rendezvouspatient.php" id="Rrv">Recharge Un Rendez-Vous</a>
-      <a href="../views/Lesrendezvouspatient.php">Mes Rendez Vous</a>
+      <a href="../views/mes_rv.php">Mes Rendez Vous</a>
       <a href="#">Signalé Un Probleme</a>
       <a href="../views/login.php" ><img id="logout" src="../public/images/logout.png" alt="logout"></a>
     </div>
     <div class="content">
-      
       <div class="prendre">
         <h1>Salut Neymar JR ! Vous pouvez prendre un Rendez-Vous ici</h1>
           <form method="post">
@@ -32,6 +31,9 @@
                 <option value="8">Implantation de cheveux</option>
                 <option value="9">Vaccination</option>
             </select>
+            <br><br>
+            <label for="datte">Créneau date :</label>
+            <input type="date" id="datte" name="date" value="2024-05-02">
             <br><br>
             <label for="creneau">Créneau horaire :</label>
             <select name="creneau" id="creneau">
@@ -51,7 +53,7 @@
         </form>
       </div>
       <div class="serviceINFO">
-        <h1>Disponibilité de nos services différents :</h1>
+        <h1>Disponibilité:</h1>
         <!-- les servives-->
         <div><h2>soins orthopédiques complets:</h2><h3>du mardi au jeudi de 08h à 12h.</h3></div>
         <div><h2>chirurgies spécialisées:</h2><h3>Disponible du dimanche au mardi de 13h à 17h.</h3></div>
